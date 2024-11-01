@@ -20,5 +20,75 @@
 .loginFormForm{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+.loginFormTitle {
+    font-family: var(--font-1);
+    font-size: 55px;
+}
+
+.loginFormDescription {
+    font-family: var(--font-2);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+    text-align: center;
+}
+
+.loginFormForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.loginFormInput {
+    font-family: var(--font-2);
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.loginFormInput:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.passwordContainer {
+    position: relative;
+    width: 100%;
+}
+
+.togglePasswordButton {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.loginFormButton {
+    font-family: var(--font-2);
+    font-size: 18px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loginFormButton:hover {
+    background-color: #0056b3;
+}
