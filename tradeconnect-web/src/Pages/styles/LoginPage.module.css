@@ -1,6 +1,9 @@
 .loginContainer {
     display: flex;
     height: 100vh;
+    background-color: var(--bg-color-1);
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .loginPageLeftContainer {
@@ -17,4 +20,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 768px){
+    .loginContainer {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .loginPageLeftContainer,
+    .loginPageRightContainer {
+        flex-basis: auto;
+        width: 90%;
+        height: 50%;
+        margin: 5vh 0;
+    }
+
+    .loginForm{
+        width: 80%;
+    }
 }
