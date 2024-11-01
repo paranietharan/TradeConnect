@@ -6,16 +6,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "admin")
-public class Admin {
+@Table(name = "users")
+public class User {
     @Id
-    @Column(name = "admin_id")
-    private int adminId;
+    @Column(name = "user_id")
+    private int customerId;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-    private String phone;
+    private String phoneNumber;
+    private String address;
 
     // TODO: Add variables to photo
+    // TODO: KYC Documents if they need to open a shop
 }
