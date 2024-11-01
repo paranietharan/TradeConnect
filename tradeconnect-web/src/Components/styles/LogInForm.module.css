@@ -1,0 +1,24 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginFormTitle{
+    font-family: var(--font-1);
+    font-size: 55px;
+}
+
+.loginFormDescription{
+    font-family: var(--font-2);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.loginFormForm{
+    display: flex;
+    flex-direction: column;
+}
+
