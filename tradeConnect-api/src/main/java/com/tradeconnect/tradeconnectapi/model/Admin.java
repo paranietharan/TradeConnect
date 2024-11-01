@@ -15,4 +15,7 @@ public class Admin {
     private String lastName;
     private String email;
     private String password;
+    private String phone;
+
+    // TODO: Add variables to photo
 }
