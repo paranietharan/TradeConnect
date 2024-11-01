@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./styles/LogInForm.module.css";
 import { useState } from 'react';
+import ShowImg from '../assets/show.svg'
+import HideImg from '../assets/hide.svg'
 
 function LoginForm() {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -29,7 +31,8 @@ function LoginForm() {
                         className={styles.togglePasswordButton}
                         onClick={togglePasswordVisibility}
                     >
-                        {passwordVisible ? "Hide" : "Show"}
+                        {/* {passwordVisible ? "Hide" : "Show"} */}
+                        <img className={styles.showAndHide__Img} src={passwordVisible ? HideImg : ShowImg} alt="Toggle password visibility" />
                     </button>
                 </div>
                 <button className={styles.loginFormButton} type="submit">Login</button>
