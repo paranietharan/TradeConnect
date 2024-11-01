@@ -4,4 +4,11 @@
 :root{
     --font-1: 'Anton', sans-serif;
     --font-2: 'Josefin Sans', sans-serif;
+
+    --bg-color-1: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
 }
