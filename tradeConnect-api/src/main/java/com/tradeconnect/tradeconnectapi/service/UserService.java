@@ -1,15 +1,24 @@
 package com.tradeconnect.tradeconnectapi.service;
 
 import com.tradeconnect.tradeconnectapi.dto.CredentialsDto;
+import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
 import com.tradeconnect.tradeconnectapi.dto.UserDto;
+import com.tradeconnect.tradeconnectapi.exceptions.AppException;
+import com.tradeconnect.tradeconnectapi.mappers.UserMapper;
 import com.tradeconnect.tradeconnectapi.model.Admin;
+import com.tradeconnect.tradeconnectapi.model.Role;
 import com.tradeconnect.tradeconnectapi.model.User;
 import com.tradeconnect.tradeconnectapi.repository.AdminRepository;
 import com.tradeconnect.tradeconnectapi.repository.UserRepository;
 import com.tradeconnect.tradeconnectapi.util.JwtUtil;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.nio.CharBuffer;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -25,6 +34,9 @@ public class UserService {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
+    private UserMapper userMapper;
+
     public UserDto login(CredentialsDto credentialsDto) {
         String password = new String(credentialsDto.getPassword());
 
@@ -38,7 +50,10 @@ public class UserService {
             userDto.setFirstName(user.getFirstName());
             userDto.setLastName(user.getLastName());
             userDto.setEmail(user.getEmail());
-            userDto.setRole(user.getRole().toString());
+
+            if(user.getRole() != null) {
+                userDto.setRole(user.getRole().name());
+            }
             userDto.setToken(token);
 
             return userDto;
@@ -65,5 +80,26 @@ public class UserService {
         }
 
         throw new RuntimeException("Invalid credentials");
+    }
+
+    public UserDto register(SignUpDto userDto) {
+        Optional<User> optionalUser = Optional.ofNullable(userRepository.findByEmail(userDto.getEmail()));
+
+        if (optionalUser.isPresent()) {
+            throw new AppException("Login already exists", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = userMapper.signUpToUser(userDto);
+        user.setPassword(passwordEncoder.encode(CharBuffer.wrap(userDto.getPassword())));
+        user.setRole(Role.ROLE_USER);
+
+        User savedUser = userRepository.save(user);
+
+        return userMapper.toUserDto(savedUser);
+    }
+
+    public UserDto findByLogin(String email) {
+        User user = userRepository.findByEmail(email);
+        return userMapper.toUserDto(user);
     }
 }
