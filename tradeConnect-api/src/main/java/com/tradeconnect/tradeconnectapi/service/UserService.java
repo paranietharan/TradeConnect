@@ -3,6 +3,7 @@ package com.tradeconnect.tradeconnectapi.service;
 import com.tradeconnect.tradeconnectapi.dto.CredentialsDto;
 import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
 import com.tradeconnect.tradeconnectapi.dto.UserDto;
+import com.tradeconnect.tradeconnectapi.dto.UserReponseDto;
 import com.tradeconnect.tradeconnectapi.exceptions.AppException;
 import com.tradeconnect.tradeconnectapi.mappers.UserMapper;
 import com.tradeconnect.tradeconnectapi.model.Admin;
@@ -101,5 +102,24 @@ public class UserService {
     public UserDto findByLogin(String email) {
         User user = userRepository.findByEmail(email);
         return userMapper.toUserDto(user);
+    }
+
+    public UserReponseDto getUser(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            return toUserResponseDto(user.get());
+        } else {
+            throw new AppException("User not found", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    private UserReponseDto toUserResponseDto(User user) {
+        UserReponseDto userReponseDto = new UserReponseDto();
+        userReponseDto.setId(user.getCustomerId());
+        userReponseDto.setFirstName(user.getFirstName());
+        userReponseDto.setLastName(user.getLastName());
+        userReponseDto.setEmail(user.getEmail());
+        userReponseDto.setRole(user.getRole().name());
+        return userReponseDto;
     }
 }

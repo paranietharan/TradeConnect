@@ -2,6 +2,7 @@ package com.tradeconnect.tradeconnectapi.mappers;
 
 import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
 import com.tradeconnect.tradeconnectapi.dto.UserDto;
+import com.tradeconnect.tradeconnectapi.dto.UserReponseDto;
 import com.tradeconnect.tradeconnectapi.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -13,5 +14,4 @@ public interface UserMapper {
 
     @Mapping(target = "password", ignore = true)
     User signUpToUser(SignUpDto signUpDto);
-
 }
