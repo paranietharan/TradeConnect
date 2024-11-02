@@ -26,6 +26,7 @@ public class AuthController {
         return ResponseEntity.ok(userDto);
     }
 
+    // TODO: Make registration process with password verification & email verification
     @PostMapping("/register")
     public ResponseEntity<UserDto> register(@RequestBody @Valid SignUpDto signUpDto) {
         UserDto userDto = userService.register(signUpDto);
