@@ -5,14 +5,10 @@ import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
 import com.tradeconnect.tradeconnectapi.dto.UserDto;
 import com.tradeconnect.tradeconnectapi.dto.UserReponseDto;
 import com.tradeconnect.tradeconnectapi.exceptions.AppException;
-import com.tradeconnect.tradeconnectapi.mappers.UserMapper;
-import com.tradeconnect.tradeconnectapi.model.Admin;
 import com.tradeconnect.tradeconnectapi.model.Role;
 import com.tradeconnect.tradeconnectapi.model.User;
-import com.tradeconnect.tradeconnectapi.repository.AdminRepository;
 import com.tradeconnect.tradeconnectapi.repository.UserRepository;
 import com.tradeconnect.tradeconnectapi.util.JwtUtil;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,16 +23,10 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
-    private AdminRepository adminRepository;
-
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
     private JwtUtil jwtUtil;
-
-    @Autowired
-    private UserMapper userMapper;
 
     public UserDto login(CredentialsDto credentialsDto) {
         String password = new String(credentialsDto.getPassword());
@@ -62,24 +52,6 @@ public class UserService {
             System.out.println("Invalid credentials for user ::" + credentialsDto.getEmail());
         }
 
-        Admin admin = adminRepository.findByEmail(credentialsDto.getEmail());
-        if (admin != null && passwordEncoder.matches(password, admin.getPassword())) {
-            String token = jwtUtil.generateToken(admin.getEmail(), "ADMIN");
-
-            // Create a new UserDto object and set the admin's details
-            UserDto userDto = new UserDto();
-            userDto.setId(admin.getAdminId());
-            userDto.setFirstName(admin.getFirstName());
-            userDto.setLastName(admin.getLastName());
-            userDto.setEmail(admin.getEmail());
-            userDto.setRole("ADMIN");
-            userDto.setToken(token);
-
-            return userDto;
-        } else {
-            System.out.println("Invalid credentials for admin ::" + credentialsDto.getEmail());
-        }
-
         throw new RuntimeException("Invalid credentials");
     }
 
@@ -90,18 +62,28 @@ public class UserService {
             throw new AppException("Login already exists", HttpStatus.BAD_REQUEST);
         }
 
-        User user = userMapper.signUpToUser(userDto);
+        User user = new User();
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(CharBuffer.wrap(userDto.getPassword())));
         user.setRole(Role.ROLE_USER);
 
         User savedUser = userRepository.save(user);
 
-        return userMapper.toUserDto(savedUser);
+        UserDto userDto1 = toUserDto(savedUser);
+        userDto1.setToken(
+                jwtUtil.generateToken(
+                        user.getEmail(),
+                        user.getRole().name()
+                )
+        );
+        return userDto1;
     }
 
     public UserDto findByLogin(String email) {
         User user = userRepository.findByEmail(email);
-        return userMapper.toUserDto(user);
+        return toUserDto(user);
     }
 
     public UserReponseDto getUser(Long id) {
@@ -121,5 +103,16 @@ public class UserService {
         userReponseDto.setEmail(user.getEmail());
         userReponseDto.setRole(user.getRole().name());
         return userReponseDto;
+    }
+
+    private UserDto toUserDto(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getCustomerId());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setEmail(user.getEmail());
+        userDto.setRole(user.getRole().name());
+
+        return userDto;
     }
 }
