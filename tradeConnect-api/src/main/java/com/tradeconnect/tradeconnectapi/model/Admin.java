@@ -4,13 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "admin")
 public class Admin {
     @Id
     @Column(name = "admin_id")
-    private int adminId;
+    private long adminId;
     private String firstName;
     private String lastName;
     private String email;
