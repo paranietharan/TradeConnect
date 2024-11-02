@@ -1,0 +1,19 @@
+.signUpText {
+    font-family: var(--font-2);
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signUpLink {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signUpLink:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
