@@ -15,3 +15,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+    secret: Tm+Qi1z8QTH2MjkGVnN/HV8cdYgvnNvVhHf5XaHlKmQ=
