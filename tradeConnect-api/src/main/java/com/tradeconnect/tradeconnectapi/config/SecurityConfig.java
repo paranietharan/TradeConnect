@@ -36,7 +36,7 @@ public class SecurityConfig {
                         authorizeRequests
                                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/register").permitAll()
-                                .requestMatchers("/messages").authenticated()
+                                .requestMatchers("/api/v1/user/**").hasRole("USER")
                                 .anyRequest().authenticated()
                 );
 
