@@ -2,6 +2,7 @@ package com.tradeconnect.tradeconnectapi.controller;
 
 import com.tradeconnect.tradeconnectapi.config.UserAuthenticationProvider;
 import com.tradeconnect.tradeconnectapi.dto.CredentialsDto;
+import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
 import com.tradeconnect.tradeconnectapi.dto.UserDto;
 import com.tradeconnect.tradeconnectapi.service.UserService;
 import jakarta.validation.Valid;
@@ -25,4 +26,10 @@ public class AuthController {
         return ResponseEntity.ok(userDto);
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<UserDto> register(@RequestBody @Valid SignUpDto signUpDto) {
+        UserDto userDto = userService.register(signUpDto);
+        userDto.setToken(userAuthenticationProvider.createToken(userDto.getEmail(), userDto.getRole()));
+        return ResponseEntity.ok(userDto);
+    }
 }
