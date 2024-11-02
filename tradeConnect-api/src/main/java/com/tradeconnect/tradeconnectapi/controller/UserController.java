@@ -1,6 +1,7 @@
 package com.tradeconnect.tradeconnectapi.controller;
 
 import com.tradeconnect.tradeconnectapi.dto.UserReponseDto;
+import com.tradeconnect.tradeconnectapi.exceptions.AppException;
 import com.tradeconnect.tradeconnectapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,11 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserReponseDto> getUser(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUser(id));
+        try {
+            UserReponseDto user = userService.getUser(id);
+            return ResponseEntity.ok(user);
+        } catch (AppException e) {
+            return ResponseEntity.status(e.getStatus()).body(null);
+        }
     }
 }
