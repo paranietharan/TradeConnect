@@ -42,6 +42,8 @@ public class UserService {
             userDto.setToken(token);
 
             return userDto;
+        } else {
+            System.out.println("Invalid credentials for user ::" + credentialsDto.getEmail());
         }
 
         Admin admin = adminRepository.findByEmail(credentialsDto.getEmail());
@@ -58,6 +60,8 @@ public class UserService {
             userDto.setToken(token);
 
             return userDto;
+        } else {
+            System.out.println("Invalid credentials for admin ::" + credentialsDto.getEmail());
         }
 
         throw new RuntimeException("Invalid credentials");
