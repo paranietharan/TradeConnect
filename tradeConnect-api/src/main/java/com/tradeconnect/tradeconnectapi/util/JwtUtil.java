@@ -13,12 +13,16 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class JwtUtil {
 
     @Value("${jwt.secret}")
     private String SECRET_KEY;
+
+    private final Set<String> revokedTokens = new HashSet<>();
 
     public String generateToken(String email, String role) {
         return Jwts.builder()
@@ -45,9 +49,13 @@ public class JwtUtil {
         return extractClaims(token).getExpiration().before(new Date());
     }
 
+    private boolean isTokenRevoked(String token) {
+        return revokedTokens.contains(token);
+    }
+
     public Authentication validateToken(String token) {
         Claims claims = extractClaims(token);
-        if (claims == null || isTokenExpired(token)) {
+        if (claims == null || isTokenExpired(token) || claims.get("role") == null || isTokenRevoked(token)) {
             return null;
         }
 
@@ -59,5 +67,10 @@ public class JwtUtil {
                 null,
                 Collections.singletonList(new SimpleGrantedAuthority(role))
         );
+    }
+
+    public void revokeToken(String token) {
+        // Implement token revocation
+        revokedTokens.add(token);
     }
 }
