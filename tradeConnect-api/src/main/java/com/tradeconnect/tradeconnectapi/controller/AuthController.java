@@ -33,6 +33,7 @@ public class AuthController {
         return ResponseEntity.ok(userDto);
     }
 
+    // Endpoint to register a new user
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody @Valid SignUpDto signUpDto) {
         String pin = verificationService.generateVerificationPin();
@@ -49,6 +50,7 @@ public class AuthController {
         return ResponseEntity.ok("Verification email sent");
     }
 
+    // Endpoint to verify email and pin
     @PostMapping("/verify")
     public ResponseEntity<UserDto> verify(@RequestParam String email, @RequestParam String pin) {
         Verification verification = verificationRepository.findById(email).orElseThrow(() -> new RuntimeException("Invalid email or pin"));
@@ -66,5 +68,15 @@ public class AuthController {
         verificationRepository.delete(verification);
 
         return ResponseEntity.ok(userDto);
+    }
+
+    // Endpoint to resend verification email
+    @PostMapping("/resend-verification")
+    public ResponseEntity<String> resendVerification(@RequestParam String email) {
+        Verification verification = verificationRepository.findById(email).orElseThrow(() -> new RuntimeException("Invalid email"));
+        verification.setPin(verificationService.generateVerificationPin());
+        verificationRepository.save(verification);
+        verificationService.sendVerificationEmail(email, verification.getPin());
+        return ResponseEntity.ok("Verification email sent");
     }
 }
