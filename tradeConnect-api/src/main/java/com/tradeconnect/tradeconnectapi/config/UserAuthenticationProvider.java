@@ -18,4 +18,8 @@ public class UserAuthenticationProvider {
     public Authentication validateToken(String authElement) {
         return jwtUtil.validateToken(authElement);
     }
+
+    public void revokeToken(String token) {
+        jwtUtil.revokeToken(token);
+    }
 }

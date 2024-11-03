@@ -79,4 +79,11 @@ public class AuthController {
         verificationService.sendVerificationEmail(email, verification.getPin());
         return ResponseEntity.ok("Verification email sent");
     }
+
+    // Endpoint to logout
+    @PostMapping("revoke-token")
+    public ResponseEntity<String> revokeToken(@RequestParam String token) {
+        userAuthenticationProvider.revokeToken(token);
+        return ResponseEntity.ok("Token revoked");
+    }
 }
