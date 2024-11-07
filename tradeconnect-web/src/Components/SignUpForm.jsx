@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './styles/SignUpForm.module.css';
 
 function SignUpForm() {
@@ -8,20 +9,19 @@ function SignUpForm() {
 
             <div className={styles.inputContainer}>
                 <form>
-                    <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" />
 
-                    <label htmlFor="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" />
 
-                    <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" />
 
-                    <label htmlFor="confirmPassword">Confirm Password</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" />
 
                     <button type="submit" className={styles.signUpButton}>Sign Up</button>
+
+                    <div className={styles.alreadyHaveAccountText}>Already have an account? <Link to="\">Login</Link></div>
                 </form>
+
             </div>
 
         </div>
