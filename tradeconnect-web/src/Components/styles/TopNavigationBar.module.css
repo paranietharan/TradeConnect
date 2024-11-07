@@ -1,11 +1,112 @@
+:root{
+    --bg-color: #ffffff;
+    --border-bottom-color: #c5cbd0;
+}
+
 .topNavigationBarContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  /* background-color: #f8f9fa; */
-  background-color: red;
-  border-bottom: 1px solid #e9ecef;
-  min-height: 50px;
-  max-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    /* background-color: #f8f9fa; */
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-bottom-color);
+    min-height: 100px;
+    max-height: 110px;
+}
+
+.logoContainer img {
+    padding: 5px;
+    height: 100px;
+    width: auto;
+}
+
+.navLinksContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    font-family: var(--font-3);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.navLinksContainer a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    padding: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navLinksContainer a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* .searchBarContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+.searchBarContainer input {
+    padding: 10px;
+    border: 1px solid #c5cbd0;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    width: 200px;
+    margin: 0 25px 0 0;
+}
+
+.searchBarContainer input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.searchBarContainer button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
+.searchBarContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.searchBarContainer input {
+    padding: 10px 40px 10px 10px; /* Add padding to the right for the button */
+    border: 1px solid #c5cbd0;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.searchBarContainer input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.searchBarContainer button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.searchBarContainer button:hover {
+    background-color: #0056b3;
 }
