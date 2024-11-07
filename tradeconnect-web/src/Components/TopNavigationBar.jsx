@@ -24,8 +24,12 @@ function TopNavigationBar() {
             </div>
 
             <div className={styles.cartFavContainer}>
-                <Link to='/cart'>Cart</Link>
-                <Link to='/favorites'>Favorites</Link>
+                <Link to='/cart' className={styles.cart}>
+                    <i class="bi bi-cart2"></i>
+                </Link>
+                <Link to='/favorites' className={styles.fav}>
+                    <i class="bi bi-heart"></i>
+                </Link>
             </div>
         </div>
     )
