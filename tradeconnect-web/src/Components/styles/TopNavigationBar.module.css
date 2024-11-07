@@ -1,4 +1,4 @@
-:root{
+:root {
     --bg-color: #ffffff;
     --border-bottom-color: #c5cbd0;
 }
@@ -21,6 +21,8 @@
     width: auto;
 }
 
+
+/********************************* Navigation links section *****************************/
 .navLinksContainer {
     display: flex;
     justify-content: space-between;
@@ -33,46 +35,17 @@
 
 .navLinksContainer a {
     text-decoration: none;
-    color: inherit; /* Inherit color from parent */
+    color: inherit;
     padding: 0 10px;
     transition: color 0.3s ease;
 }
 
 .navLinksContainer a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff;
 }
 
-/* .searchBarContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-}
 
-.searchBarContainer input {
-    padding: 10px;
-    border: 1px solid #c5cbd0;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    width: 200px;
-    margin: 0 25px 0 0;
-}
-
-.searchBarContainer input:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.searchBarContainer button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-} */
+/********************************* Search bar section *****************************/
 .searchBarContainer {
     position: relative;
     display: flex;
@@ -81,7 +54,8 @@
 }
 
 .searchBarContainer input {
-    padding: 10px 40px 10px 10px; /* Add padding to the right for the button */
+    padding: 10px 40px 10px 10px;
+    /* Add padding to the right for the button */
     border: 1px solid #c5cbd0;
     border-radius: 5px;
     width: 100%;
@@ -102,11 +76,59 @@
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+    border-radius: 0 5px 5px 0;
+    /* Rounded corners on the right side */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .searchBarContainer button:hover {
     background-color: #0056b3;
+}
+
+/*********************************** Cart & Favourite section ***************************/
+.cartFavContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    color: black;
+}
+
+.cartFavContainer .cart i,
+.cartFavContainer .fav i {
+    color: black;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    margin: 0px 10px;
+}
+
+.cartFavContainer .cart i:hover,
+.cartFavContainer .fav i:hover {
+    color: #007bff;
+}
+
+
+/************************* Mobile responsive styles *************************/
+@media screen and (max-width: 768px) {
+    .topNavigationBarContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: fit-content;
+    }
+
+    .navLinksContainer {
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .searchBarContainer {
+        width: 70%;
+    }
+
+    .cartFavContainer {
+        margin-top: 10px;
+        width: 20%;
+    }
 }
