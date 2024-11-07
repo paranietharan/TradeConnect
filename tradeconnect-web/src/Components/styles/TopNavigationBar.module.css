@@ -109,7 +109,7 @@
 }
 
 
-/************************* Mobile responsive styles *************************/
+/************************* Mobile responsive styles *********************/
 @media screen and (max-width: 768px) {
     .topNavigationBarContainer {
         display: flex;
