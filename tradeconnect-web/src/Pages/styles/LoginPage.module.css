@@ -1,7 +1,16 @@
+.loginPage{
+    max-height: 100vh;
+    /* overflow: hidden; */
+}
+
+/* .topNavigationBarContainer{
+    max-height: 110px;
+} */
+
 .loginContainer {
     display: flex;
-    height: 100vh;
     background-color: var(--bg-color-1);
+    /* max-height: calc(100vh - 110px); */
     max-height: 100vh;
     overflow: hidden;
 }
