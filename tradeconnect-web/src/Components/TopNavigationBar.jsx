@@ -11,9 +11,9 @@ function TopNavigationBar() {
 
             <div className={styles.navLinksContainer}>
                 <Link to='/'>Home</Link>
-                <Link to='/contact'>Products</Link>
-                <Link to='/about'>About</Link>
-                <Link to='/login'>Login</Link>
+                <Link to='/'>Products</Link>
+                <Link to='/'>About</Link>
+                <Link to='/'>Login</Link>
             </div>
 
             <div className={styles.searchBarContainer}>
