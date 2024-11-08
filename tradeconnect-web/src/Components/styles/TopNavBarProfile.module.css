@@ -24,13 +24,17 @@
     border-radius: 5px;
     overflow: hidden;
     z-index: 1;
-    width: 300px;
+    width: 280px;
+    max-width: 300px;
+    font-family: var(--font-5);
+    margin-top: 10px;
+    background-color: linear-gradient(135deg, #a39aa4, #ffffff);
 }
 
 .dropdownItem {
     display: block;
     padding: 10px 20px;
-    color: #333;
+    color: black;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
