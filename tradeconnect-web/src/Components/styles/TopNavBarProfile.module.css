@@ -18,12 +18,13 @@
 .dropdownMenu {
     position: absolute;
     top: 100%;
-    right: -50%;
-    background-color: white;
+    right: -150px;
+    background-color: transparent;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
     z-index: 1;
+    width: 300px;
 }
 
 .dropdownItem {
@@ -32,6 +33,10 @@
     color: #333;
     text-decoration: none;
     transition: background-color 0.3s ease;
+}
+
+.dropdownItem i{
+    margin-right: 10px;
 }
 
 .dropdownItem:hover {

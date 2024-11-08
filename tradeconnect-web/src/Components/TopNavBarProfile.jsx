@@ -21,18 +21,23 @@ function TopNavBarProfile() {
             {dropdownVisible && isLoggedIn && (
                 <div className={styles.dropdownMenu}>
                     <Link to="/profile" className={styles.dropdownItem}>
+                        <i class="bi bi-person"></i>
                         Manage My Account
                     </Link>
-                    <Link to="/settings" className={styles.dropdownItem}>
+                    <Link to="/order" className={styles.dropdownItem}>
+                        <i class="bi bi-basket3"></i>
                         My Order
                     </Link>
                     <Link to="/settings" className={styles.dropdownItem}>
+                        <i class="bi bi-x-circle"></i>
                         My Cancellations
                     </Link>
                     <Link to="/settings" className={styles.dropdownItem}>
+                        <i class="bi bi-star-fill"></i>
                         My Reviews
                     </Link>
                     <Link to="/logout" className={styles.dropdownItem}>
+                        <i class="bi bi-box-arrow-left"></i>
                         Logout
                     </Link>
                 </div>
