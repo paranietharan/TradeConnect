@@ -93,11 +93,12 @@
     align-items: center;
     width: 10%;
     color: black;
+    margin-right: 10vw;
 }
 
 .cartFavContainer .cart i,
 .cartFavContainer .fav i,
-.cartFavContainer .profile i {
+.cartFavContainer .profile{
     color: black;
     font-size: 24px;
     transition: color 0.3s ease;
@@ -106,7 +107,7 @@
 
 .cartFavContainer .cart i:hover,
 .cartFavContainer .fav i:hover
-.cartFavContainer .profile i:hover {
+.cartFavContainer .profile {
     color: #007bff;
 }
 
