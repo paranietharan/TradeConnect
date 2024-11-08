@@ -1,0 +1,39 @@
+.topNavBarProfileContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.profileIcon {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.profileIcon.loggedIn {
+    background-color: #007bff; /* Circular background when logged in */
+    color: white;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdownItem {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdownItem:hover {
+    background-color: #f1f1f1;
+}
