@@ -30,6 +30,9 @@ function TopNavigationBar() {
                 <Link to='/favorites' className={styles.fav}>
                     <i class="bi bi-heart"></i>
                 </Link>
+                <Link to="/profile" className={styles.profile}>
+                    <i class="bi bi-person"></i>
+                </Link>
             </div>
         </div>
     )
