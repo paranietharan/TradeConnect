@@ -1,6 +1,7 @@
 import styles from './styles/TopNavigationBar.module.css';
 import eCommerceLogo from '../assets/e-commerce-logo.png';
 import { Link } from 'react-router-dom';
+import TopNavBarProfile from './TopNavBarProfile';
 
 function TopNavigationBar() {
     return (
@@ -30,6 +31,11 @@ function TopNavigationBar() {
                 <Link to='/favorites' className={styles.fav}>
                     <i class="bi bi-heart"></i>
                 </Link>
+
+                <div className={styles.profile}>
+                    <TopNavBarProfile />
+                </div>
+
             </div>
         </div>
     )
