@@ -1,5 +1,6 @@
 import styles from './styles/HomePage.module.css';
 import TopNavigationBar from '../Components/TopNavigationBar';
+import NewArrivalAndCategory from '../Components/NewArrivalAndCategory';
 
 function HomePage(){
     return(
@@ -9,7 +10,9 @@ function HomePage(){
             </div>
             <div className={styles.HomePageBody}>
                 {/* Sale and New Arrival */}
-                <div className={styles.saleAndNewArrival}></div>
+                <div className={styles.newArrivalAndCategory}>
+                    <NewArrivalAndCategory />
+                </div>
                 {/* Best Seller */}
                 <div className={styles.bestSeller}></div>
                 {/* Categories */}
