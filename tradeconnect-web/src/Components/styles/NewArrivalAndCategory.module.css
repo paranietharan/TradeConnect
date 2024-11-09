@@ -2,4 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 2px solid #db4444;
+    margin: 0px 2px;
 }
