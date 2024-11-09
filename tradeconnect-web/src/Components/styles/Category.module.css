@@ -1,0 +1,21 @@
+.CategoryContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    margin: 25px 25px 0px 25px;
+    width: 20vw;
+    border-left: 4px solid #db4444;
+    border-right: 2px solid #cccccc;
+}
+
+.CategoryContainer a{
+    text-decoration: none;
+    color: black;
+    padding: 2px 0px;
+    font-size: var(--font-6);
+    font-size: 20px;
+    font-weight: 600;
+}

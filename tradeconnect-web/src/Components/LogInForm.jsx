@@ -4,6 +4,14 @@ import { useState } from 'react';
 import ShowImg from '../assets/show.svg'
 import HideImg from '../assets/hide.svg'
 
+
+/**
+ * LoginForm Component
+ * 
+ * This component is used in the LoginPage component.
+ * It represents the login form, including fields for email and password,
+ * and a button to toggle the visibility of the password.
+ */
 function LoginForm() {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
