@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './styles/SignUpForm.module.css';
 
+/**
+ * SignUpForm component
+ * 
+ * It is used in Signup page
+*/
 function SignUpForm() {
     return (
         <div className={styles.SignUpFormContainer}>

@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');/* Raleway font */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');/* Merriweather font */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');/* Fjalla One font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');/* Playfair Display font */
 
 /* Bootstrap Icons */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
@@ -13,6 +14,7 @@
     --font-3: 'Raleway', sans-serif;
     --font-4: 'Merriweather', serif;
     --font-5: 'Fjalla One', sans-serif;
+    --font-6: 'Playfair Display', serif;
 
     --bg-color-1: #ffffff;
 }

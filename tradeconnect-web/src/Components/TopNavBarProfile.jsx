@@ -2,6 +2,12 @@ import styles from './styles/TopNavBarProfile.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+/**
+ * 
+ * TopNavBarProfile component
+ * 
+ * It is used in all pages for represent navigation bar drop down menu with profie
+ */
 function TopNavBarProfile() {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [dropdownVisible, setDropdownVisible] = useState(false);
