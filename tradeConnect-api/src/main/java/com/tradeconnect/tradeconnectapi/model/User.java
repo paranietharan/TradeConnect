@@ -27,9 +27,10 @@ public class User {
     private String address;
     @Enumerated(EnumType.STRING)
     private Role role;
+    byte[] ProfileImage;
 
-    // TODO: Add variables to photo
-    // TODO: KYC Documents if they need to open a shop
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    List<ProofDocuments> proofDocuments;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private List<Comment> comments;
