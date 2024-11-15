@@ -1,6 +1,7 @@
 package com.tradeconnect.tradeconnectapi.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,11 +9,13 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
-@Table(name = "products")
 @Getter
 @Setter
+@Builder
+@Table(name = "products")
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
@@ -20,8 +23,8 @@ public class Product {
     private int avilableQuantity;
     private boolean isAvailable;
     private boolean isFreeShipping;
-
-    // TODO: Add Images
+    private boolean isHidden;
+    private byte[] ProductImage;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
