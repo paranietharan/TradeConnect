@@ -1,0 +1,72 @@
+.SalesSectionContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.SalesSectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.salesTimer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.salesTimerContent {
+    display: flex;
+    align-items: center;
+}
+
+.salesTimerTitle {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.salesTimerTime {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.salesItemsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+}
+
+.salesItems {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+
+.scrollButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.scrollButton:hover {
+    background-color: #2980b9;
+}
+
+.left {
+    margin-right: 10px;
+}
+
+.right {
+    margin-left: 10px;
+}

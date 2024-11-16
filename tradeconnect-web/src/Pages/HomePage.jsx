@@ -1,6 +1,8 @@
 import styles from './styles/HomePage.module.css';
 import TopNavigationBar from '../Components/TopNavigationBar';
 import NewArrivalAndCategory from '../Components/NewArrivalAndCategory';
+import PageFooter from '../Components/PageFooter';
+import SalesSection from '../Components/SalesSection';
 
 function HomePage(){
     return(
@@ -9,18 +11,22 @@ function HomePage(){
                 <TopNavigationBar />
             </div>
             <div className={styles.HomePageBody}>
-                {/* Sale and New Arrival */}
+                {/* Category and New Arrival */}
                 <div className={styles.newArrivalAndCategory}>
                     <NewArrivalAndCategory />
                 </div>
-                {/* Best Seller */}
-                <div className={styles.bestSeller}></div>
+                {/* Sales */}
+                <div className={styles.sales}>
+                    <SalesSection />
+                </div>
                 {/* Categories */}
                 <div className={styles.categories}></div>
                 {/* Brands */}
                 <div className={styles.brands}></div>
                 {/*Footer */}
-                <div className={styles.footer}></div>
+                <div className={styles.footer}>
+                    <PageFooter />
+                </div>
             </div>
         </div>
     );
