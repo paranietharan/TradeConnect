@@ -1,0 +1,71 @@
+.SalesItemContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 200px;
+    /* height: 500px; */
+    max-height: 400px;
+}
+
+.SalesItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.SalesItemImage {
+    width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.SalesItemDetails {
+    text-align: center;
+}
+
+.SalesItemName {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.SalesItemNewPrice {
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.SalesItemOldPrice {
+    font-size: 14px;
+    color: #7f8c8d;
+    text-decoration: line-through;
+    margin: 5px 0;
+}
+
+.SalesItemButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px 0;
+    transition: background-color 0.3s;
+}
+
+.SalesItemButton:hover {
+    background-color: #2980b9;
+}
+
+.SalesItemRating {
+    margin-top: 10px;
+}
