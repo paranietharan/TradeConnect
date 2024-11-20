@@ -1,6 +1,7 @@
 package com.tradeconnect.tradeconnectapi.mapper;
 
 import com.tradeconnect.tradeconnectapi.dto.ProductRequest;
+import com.tradeconnect.tradeconnectapi.dto.ProductResponse;
 import com.tradeconnect.tradeconnectapi.model.Product;
 import com.tradeconnect.tradeconnectapi.repository.CategoryRepository;
 import com.tradeconnect.tradeconnectapi.repository.ShopRepository;
@@ -41,5 +42,19 @@ public class ProductMapper {
                                 .orElseThrow(() -> new RuntimeException("Shop not found"))
                 )
                 .build();
+    }
+
+    public ProductResponse toProductResponse(Product product) {
+        return new ProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getDescription(),
+                product.getPrice(),
+                product.getAvilableQuantity(),
+                product.isAvailable(),
+                product.isFreeShipping(),
+                product.isHidden(),
+                product.getProductImage()
+        );
     }
 }
