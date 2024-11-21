@@ -1,7 +1,7 @@
 package com.tradeconnect.tradeconnectapi.mapper;
 
-import com.tradeconnect.tradeconnectapi.dto.ProductRequest;
-import com.tradeconnect.tradeconnectapi.dto.ProductResponse;
+import com.tradeconnect.tradeconnectapi.dto.Product.ProductRequest;
+import com.tradeconnect.tradeconnectapi.dto.Product.ProductResponse;
 import com.tradeconnect.tradeconnectapi.model.Product;
 import com.tradeconnect.tradeconnectapi.repository.CategoryRepository;
 import com.tradeconnect.tradeconnectapi.repository.ShopRepository;

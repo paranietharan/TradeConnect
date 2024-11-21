@@ -1,7 +1,7 @@
 package com.tradeconnect.tradeconnectapi.dto.Shop;
 
 public record ShopResponse(
-        int id,
+        Long id,
         String name,
         String address,
         String phone,
