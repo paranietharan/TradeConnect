@@ -1,7 +1,7 @@
-package com.tradeconnect.tradeconnectapi.dto;
+package com.tradeconnect.tradeconnectapi.dto.Category;
 
 public record CategoryResponse(
-        Integer id,
+        Long id,
         String name,
         String description
 ) {
