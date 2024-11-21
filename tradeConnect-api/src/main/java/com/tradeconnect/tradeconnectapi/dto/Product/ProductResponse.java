@@ -1,4 +1,4 @@
-package com.tradeconnect.tradeconnectapi.dto;
+package com.tradeconnect.tradeconnectapi.dto.Product;
 
 import java.math.BigDecimal;
 
