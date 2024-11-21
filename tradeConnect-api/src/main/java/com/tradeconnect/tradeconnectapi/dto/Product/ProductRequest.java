@@ -1,11 +1,11 @@
-package com.tradeconnect.tradeconnectapi.dto;
+package com.tradeconnect.tradeconnectapi.dto.Product;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
-public record UpdateProductRequest(
+public record ProductRequest(
         @NotNull(message = "Product name is required")
         String name,
         @NotNull(message = "Product description is required")
@@ -19,6 +19,8 @@ public record UpdateProductRequest(
         @NotNull(message = "Product free shipping is required")
         boolean isFreeShipping,
         boolean isHidden,
-        byte[] ProductImage
+        byte[] ProductImage,
+        int categoryId,
+        int shopId
 ) {
 }

@@ -1,7 +1,6 @@
 package com.tradeconnect.tradeconnectapi.dto.Shop;
 
-public record ShopResponse(
-        Long id,
+public record CreateShopRequest(
         String name,
         String address,
         String phone,
@@ -10,6 +9,7 @@ public record ShopResponse(
         String description,
         String shopType,
         byte[] logo,
-        byte[] banner
+        byte[] banner,
+        Long userId
 ) {
 }

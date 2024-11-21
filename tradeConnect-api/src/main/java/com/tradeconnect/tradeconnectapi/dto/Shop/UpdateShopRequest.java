@@ -1,6 +1,6 @@
 package com.tradeconnect.tradeconnectapi.dto.Shop;
 
-public record ShopResponse(
+public record UpdateShopRequest(
         Long id,
         String name,
         String address,

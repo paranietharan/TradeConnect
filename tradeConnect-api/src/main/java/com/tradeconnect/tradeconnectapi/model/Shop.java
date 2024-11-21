@@ -1,8 +1,14 @@
 package com.tradeconnect.tradeconnectapi.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Getter
+@Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table(name = "shops")
 public class Shop {
     @Id

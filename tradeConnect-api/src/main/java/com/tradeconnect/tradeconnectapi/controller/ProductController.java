@@ -1,8 +1,8 @@
 package com.tradeconnect.tradeconnectapi.controller;
 
-import com.tradeconnect.tradeconnectapi.dto.ProductRequest;
-import com.tradeconnect.tradeconnectapi.dto.ProductResponse;
-import com.tradeconnect.tradeconnectapi.dto.UpdateProductRequest;
+import com.tradeconnect.tradeconnectapi.dto.Product.ProductRequest;
+import com.tradeconnect.tradeconnectapi.dto.Product.ProductResponse;
+import com.tradeconnect.tradeconnectapi.dto.Product.UpdateProductRequest;
 import com.tradeconnect.tradeconnectapi.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
