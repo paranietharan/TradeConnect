@@ -25,7 +25,7 @@ public class ProductService {
         this.productMapper = productMapper;
     }
 
-    public Integer addProduct(ProductRequest request) {
+    public Long addProduct(ProductRequest request) {
         Product product = productMapper.toProduct(request);
         productRepository.save(product);
         return product.getId();
@@ -37,13 +37,13 @@ public class ProductService {
         return productPage.map(productMapper::toProductResponse);
     }
 
-    public ProductResponse findById(int id) {
+    public ProductResponse findById(Long id) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
         return productMapper.toProductResponse(product);
     }
 
-    public Integer updateProductById(int id, UpdateProductRequest productRequest) {
+    public Long updateProductById(Long id, UpdateProductRequest productRequest) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
 
@@ -60,7 +60,7 @@ public class ProductService {
         return product.getId();
     }
 
-    public Integer deleteProductById(int id) {
+    public Long deleteProductById(Long id) {
         productRepository.deleteById(id);
         return id;
     }
