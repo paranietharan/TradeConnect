@@ -2,6 +2,7 @@ package com.tradeconnect.tradeconnectapi.controller;
 
 import com.tradeconnect.tradeconnectapi.dto.CategoryRequest;
 import com.tradeconnect.tradeconnectapi.dto.CategoryResponse;
+import com.tradeconnect.tradeconnectapi.dto.UpdateCategoryRequest;
 import com.tradeconnect.tradeconnectapi.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +36,13 @@ public class CategoryController {
             @PathVariable Integer id
     ) {
         return ResponseEntity.ok(categoryService.getCategoryById(id));
+    }
+
+    // update category by id
+    @PutMapping
+    public ResponseEntity<String> updateCategory(
+            @RequestBody UpdateCategoryRequest categoryRequest
+    ) {
+        return ResponseEntity.ok(categoryService.updateCategory(categoryRequest));
     }
 }

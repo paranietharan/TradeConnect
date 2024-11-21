@@ -2,6 +2,7 @@ package com.tradeconnect.tradeconnectapi.service;
 
 import com.tradeconnect.tradeconnectapi.dto.CategoryRequest;
 import com.tradeconnect.tradeconnectapi.dto.CategoryResponse;
+import com.tradeconnect.tradeconnectapi.dto.UpdateCategoryRequest;
 import com.tradeconnect.tradeconnectapi.model.Category;
 import com.tradeconnect.tradeconnectapi.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
@@ -41,5 +42,14 @@ public class CategoryService {
         Category category = categoryRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Category not found"));
         return mapToCategoryResponse(category);
+    }
+
+    public String updateCategory(UpdateCategoryRequest categoryRequest) {
+        Category category = categoryRepository.findById(categoryRequest.id())
+                .orElseThrow(() -> new RuntimeException("Category not found"));
+        category.setName(categoryRequest.name());
+        category.setDescription(categoryRequest.description());
+        categoryRepository.save(category);
+        return "Category updated successfully";
     }
 }
