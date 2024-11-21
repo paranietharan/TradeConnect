@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name = "rating")
 public class Rating {
     @Id
-    private int ratingId;
+    private Long ratingId;
     private int rating;
     private Date date;
 
