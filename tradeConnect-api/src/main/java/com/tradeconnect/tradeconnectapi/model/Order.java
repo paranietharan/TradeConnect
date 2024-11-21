@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "orders")
 public class Order {
     @Id
-    private int id;
+    private Long id;
     private String orderStatus;
     @Enumerated(EnumType.STRING)
     private OrderType orderType;

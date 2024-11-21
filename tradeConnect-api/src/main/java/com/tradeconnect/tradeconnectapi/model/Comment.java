@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name = "comments")
 public class Comment {
     @Id
-    private int id;
+    private Long id;
     private String comment;
     private Date date;
 
