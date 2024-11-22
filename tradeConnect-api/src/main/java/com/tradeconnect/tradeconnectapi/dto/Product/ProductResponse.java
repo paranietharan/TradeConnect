@@ -3,7 +3,7 @@ package com.tradeconnect.tradeconnectapi.dto.Product;
 import java.math.BigDecimal;
 
 public record ProductResponse(
-        int id,
+        Long id,
         String name,
         String description,
         BigDecimal price,
