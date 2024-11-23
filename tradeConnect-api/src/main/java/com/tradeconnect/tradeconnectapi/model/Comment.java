@@ -1,11 +1,17 @@
 package com.tradeconnect.tradeconnectapi.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "comments")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Comment {
     @Id
     private Long id;

@@ -6,6 +6,7 @@ import com.tradeconnect.tradeconnectapi.dto.Product.UpdateProductRequest;
 import com.tradeconnect.tradeconnectapi.mapper.ProductMapper;
 import com.tradeconnect.tradeconnectapi.model.Product;
 import com.tradeconnect.tradeconnectapi.repository.ProductRepository;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -63,5 +64,16 @@ public class ProductService {
     public Long deleteProductById(Long id) {
         productRepository.deleteById(id);
         return id;
+    }
+
+    // get product by id
+    public Product getProductById(Long productId) {
+        return productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+    }
+
+    // check if product exists
+    public boolean isProductExists(Long aLong) {
+        return productRepository.existsById(aLong);
     }
 }
