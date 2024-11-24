@@ -1,9 +1,7 @@
 package com.tradeconnect.tradeconnectapi.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -13,6 +11,8 @@ import java.util.List;
 @Setter
 @Builder
 @Table(name = "products")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
