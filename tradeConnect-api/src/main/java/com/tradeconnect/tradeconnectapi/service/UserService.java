@@ -9,6 +9,7 @@ import com.tradeconnect.tradeconnectapi.model.Role;
 import com.tradeconnect.tradeconnectapi.model.User;
 import com.tradeconnect.tradeconnectapi.repository.UserRepository;
 import com.tradeconnect.tradeconnectapi.util.JwtUtil;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -114,5 +115,16 @@ public class UserService {
         userDto.setRole(user.getRole().name());
 
         return userDto;
+    }
+
+    // Check if user exists
+    public boolean isUserExists(Long userId) {
+        return userRepository.existsById(userId);
+    }
+
+    public User getUserById(Long userId) {
+        return userRepository
+                .findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 }

@@ -20,7 +20,7 @@ public record ProductRequest(
         boolean isFreeShipping,
         boolean isHidden,
         byte[] ProductImage,
-        int categoryId,
-        int shopId
+        Long categoryId,
+        Long shopId
 ) {
 }
