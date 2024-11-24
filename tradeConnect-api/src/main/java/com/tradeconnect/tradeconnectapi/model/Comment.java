@@ -16,6 +16,8 @@ public class Comment {
     @Id
     private Long id;
     private String comment;
+
+
     private Date date;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -25,4 +27,10 @@ public class Comment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
+
+    // Create a date when a comment is created
+    @PrePersist
+    protected void onCreate() {
+        date = new Date();
+    }
 }
