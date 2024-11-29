@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styles from './styles/SalesSection.module.css';
-import SalesItem from './SalesItem';
+import SalesItem from '../SalesItem';
 
 export default function SalesSection() {
     const scrollContainerRef = useRef(null);
@@ -40,6 +40,8 @@ export default function SalesSection() {
                     &gt;
                 </button>
             </div>
+
+            {/* Sales section buttons */}
         </div>
     );
 }

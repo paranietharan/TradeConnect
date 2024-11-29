@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles/SignUpPage.module.css';
-import TopNavigationBar from '../Components/TopNavigationBar';
+import TopNavigationBar from '../Components/utils/TopNavigationBar';
 import SignUpLogo from '../assets/shopping_signup.svg';
 import SignUpForm from '../Components/SignUpForm';
 

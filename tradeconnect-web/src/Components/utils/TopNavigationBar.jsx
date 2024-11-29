@@ -1,5 +1,5 @@
 import styles from './styles/TopNavigationBar.module.css';
-import eCommerceLogo from '../assets/e-commerce-logo.png';
+import eCommerceLogo from '../../assets/e-commerce-logo.png';
 import { Link } from 'react-router-dom';
 import TopNavBarProfile from './TopNavBarProfile';
 

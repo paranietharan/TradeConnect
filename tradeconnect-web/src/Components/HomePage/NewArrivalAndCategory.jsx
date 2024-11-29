@@ -1,6 +1,6 @@
 import styles from './styles/NewArrivalAndCategory.module.css';
-import Category from './Category';
-import NewArrival from './NewArrival';
+import Category from '../Category';
+import NewArrival from '../NewArrival';
 
 /**
  * 

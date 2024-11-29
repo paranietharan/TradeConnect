@@ -1,8 +1,8 @@
 import styles from './styles/HomePage.module.css';
-import TopNavigationBar from '../Components/TopNavigationBar';
-import NewArrivalAndCategory from '../Components/NewArrivalAndCategory';
+import TopNavigationBar from '../Components/utils/TopNavigationBar';
+import NewArrivalAndCategory from '../Components/HomePage/NewArrivalAndCategory';
 import PageFooter from '../Components/PageFooter';
-import SalesSection from '../Components/SalesSection';
+import SalesSection from '../Components/HomePage/SalesSection';
 
 function HomePage(){
     return(
