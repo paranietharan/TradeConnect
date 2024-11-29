@@ -41,7 +41,9 @@ export default function SalesSection() {
                 </button>
             </div>
 
-            {/* Sales section buttons */}
+            <div className={styles.salesSectionButton}>
+                <button>More Products</button>
+            </div>
         </div>
     );
 }

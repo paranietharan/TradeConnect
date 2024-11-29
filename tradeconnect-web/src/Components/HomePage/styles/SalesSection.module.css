@@ -70,3 +70,26 @@
 .right {
     margin-left: 10px;
 }
+
+
+.salesSectionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.salesSectionButton button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.salesSectionButton button:hover {
+    background-color: darkorange;
+}
