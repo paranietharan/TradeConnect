@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles/LoginPage.module.css";
 import LoginForm from "../Components/LogInForm";
 import SignUpText from "../Components/SignUpText";
-import TopNavigationBar from "../Components/TopNavigationBar";
+import TopNavigationBar from "../Components/utils/TopNavigationBar";
 import LoginLogo from "../assets/shopping_login.svg";
 
 function LoginPage() {
