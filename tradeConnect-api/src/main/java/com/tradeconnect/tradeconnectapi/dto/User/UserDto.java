@@ -1,6 +1,5 @@
-package com.tradeconnect.tradeconnectapi.dto;
+package com.tradeconnect.tradeconnectapi.dto.User;
 
-import com.tradeconnect.tradeconnectapi.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
