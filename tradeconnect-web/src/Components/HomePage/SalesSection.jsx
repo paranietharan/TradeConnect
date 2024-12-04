@@ -35,6 +35,14 @@ export default function SalesSection() {
                     <SalesItem />
                     <SalesItem />
                     <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
+                    <SalesItem />
                 </div>
                 <button className={`${styles.scrollButton} ${styles.right}`} onClick={scrollRight}>
                     &gt;

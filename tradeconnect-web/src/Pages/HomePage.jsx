@@ -3,6 +3,7 @@ import TopNavigationBar from '../Components/utils/TopNavigationBar';
 import NewArrivalAndCategory from '../Components/HomePage/NewArrivalAndCategory';
 import PageFooter from '../Components/utils/PageFooter';
 import SalesSection from '../Components/HomePage/SalesSection';
+import CategorySection from '../Components/HomePage/CategorySection';
 
 function HomePage(){
     return(
@@ -20,9 +21,9 @@ function HomePage(){
                     <SalesSection />
                 </div>
                 {/* Categories */}
-                <div className={styles.categories}></div>
-                {/* Brands */}
-                <div className={styles.brands}></div>
+                <div className={styles.categories}>
+                    <CategorySection />
+                </div>
                 {/*Footer */}
                 <div className={styles.footer}>
                     <PageFooter />
