@@ -1,8 +1,11 @@
 import styles from './styles/HomePage.module.css';
 import TopNavigationBar from '../Components/utils/TopNavigationBar';
 import NewArrivalAndCategory from '../Components/HomePage/NewArrivalAndCategory';
-import PageFooter from '../Components/PageFooter';
+import PageFooter from '../Components/utils/PageFooter';
 import SalesSection from '../Components/HomePage/SalesSection';
+import CategorySection from '../Components/HomePage/CategorySection';
+import PopularProducts from '../Components/HomePage/PopularProducts';
+import ProductGrid from '../Components/HomePage/ProductGrid';
 
 function HomePage(){
     return(
@@ -19,10 +22,20 @@ function HomePage(){
                 <div className={styles.sales}>
                     <SalesSection />
                 </div>
+
+                {/* Popular Products */}
+                <div className={styles.popularProducts}>
+                    <PopularProducts />
+                </div>
+
                 {/* Categories */}
-                <div className={styles.categories}></div>
-                {/* Brands */}
-                <div className={styles.brands}></div>
+                <div className={styles.categories}>
+                    <CategorySection />
+                </div>
+
+                <div className={styles.products}>
+                    <ProductGrid />
+                </div>
                 {/*Footer */}
                 <div className={styles.footer}>
                     <PageFooter />

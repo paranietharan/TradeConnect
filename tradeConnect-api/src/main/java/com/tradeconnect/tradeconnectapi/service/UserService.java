@@ -2,14 +2,13 @@ package com.tradeconnect.tradeconnectapi.service;
 
 import com.tradeconnect.tradeconnectapi.dto.CredentialsDto;
 import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
-import com.tradeconnect.tradeconnectapi.dto.UserDto;
+import com.tradeconnect.tradeconnectapi.dto.User.UserDto;
 import com.tradeconnect.tradeconnectapi.dto.UserReponseDto;
 import com.tradeconnect.tradeconnectapi.exceptions.AppException;
 import com.tradeconnect.tradeconnectapi.model.Role;
 import com.tradeconnect.tradeconnectapi.model.User;
 import com.tradeconnect.tradeconnectapi.repository.UserRepository;
 import com.tradeconnect.tradeconnectapi.util.JwtUtil;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -126,5 +125,15 @@ public class UserService {
         return userRepository
                 .findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    // Get Full user details
+    public UserReponseDto getFullUserDetails(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            return toUserResponseDto(user.get());
+        } else {
+            throw new AppException("User not found", HttpStatus.NOT_FOUND);
+        }
     }
 }
