@@ -3,7 +3,7 @@ package com.tradeconnect.tradeconnectapi.controller;
 import com.tradeconnect.tradeconnectapi.config.UserAuthenticationProvider;
 import com.tradeconnect.tradeconnectapi.dto.CredentialsDto;
 import com.tradeconnect.tradeconnectapi.dto.SignUpDto;
-import com.tradeconnect.tradeconnectapi.dto.UserDto;
+import com.tradeconnect.tradeconnectapi.dto.User.UserDto;
 import com.tradeconnect.tradeconnectapi.model.Verification;
 import com.tradeconnect.tradeconnectapi.repository.VerificationRepository;
 import com.tradeconnect.tradeconnectapi.service.UserService;
