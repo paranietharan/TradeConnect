@@ -31,5 +31,6 @@ public class Order {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    @OneToOne
     private Address shippingAddress;
 }

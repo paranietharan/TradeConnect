@@ -1,10 +1,7 @@
 package com.tradeconnect.tradeconnectapi.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -12,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "orders")
+@Builder
 public class Address {
 
     @Id
@@ -22,4 +20,11 @@ public class Address {
     private String state;
     private String country;
     private String zipCode;
+
+    @OneToOne(mappedBy = "shippingAddress")
+    private Order order;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 }
