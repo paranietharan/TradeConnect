@@ -5,10 +5,7 @@ import com.tradeconnect.tradeconnectapi.dto.Address.AddressResponse;
 import com.tradeconnect.tradeconnectapi.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/address")
@@ -22,5 +19,26 @@ public class AddressController {
             @RequestBody AddressRequest addressRequest
             ){
         return ResponseEntity.ok(addressService.createAddress(addressRequest));
+    }
+
+    @PutMapping
+    public ResponseEntity<AddressResponse> editAddress(
+            @RequestBody AddressRequest addressRequest
+    ){
+        return ResponseEntity.ok(addressService.editAddress(addressRequest));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteAddress(
+            @RequestParam Long id
+    ){
+        return ResponseEntity.ok(addressService.deleteAddress(id));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<AddressResponse> getAddress(
+            @RequestParam Long id
+    ){
+        return ResponseEntity.ok(addressService.getAddress(id));
     }
 }

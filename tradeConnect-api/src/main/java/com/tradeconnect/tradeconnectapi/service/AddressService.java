@@ -19,4 +19,32 @@ public class AddressService {
         Address savedAddress = addressRepository.save(address);
         return addressMapper.toAddressResponse(savedAddress);
     }
+
+    public AddressResponse editAddress(AddressRequest addressRequest) {
+        Address existingAddress = addressRepository.findById(addressRequest.id())
+                .orElseThrow(() -> new RuntimeException("Address not found"));
+
+        existingAddress.setStreet(addressRequest.street());
+        existingAddress.setCity(addressRequest.city());
+        existingAddress.setState(addressRequest.state());
+        existingAddress.setCountry(addressRequest.country());
+        existingAddress.setZipCode(addressRequest.zipCode());
+
+
+        Address updatedAddress = addressRepository.save(existingAddress);
+        return addressMapper.toAddressResponse(updatedAddress);
+    }
+
+    public Integer deleteAddress(Long id) {
+        Address existingAddress = addressRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Address not found"));
+        addressRepository.delete(existingAddress);
+        return 1;
+    }
+
+    public AddressResponse getAddress(Long id) {
+        Address address = addressRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Address not found"));
+        return addressMapper.toAddressResponse(address);
+    }
 }
