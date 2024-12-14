@@ -36,4 +36,16 @@ public class UserController {
             return ResponseEntity.status(e.getStatus()).body(null);
         }
     }
+
+    // if the user deleted successfully return 1 if not throw -1
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteUser(
+            @PathVariable Long id
+    ){
+        try{
+            return ResponseEntity.ok(userService.deleteUser(id));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

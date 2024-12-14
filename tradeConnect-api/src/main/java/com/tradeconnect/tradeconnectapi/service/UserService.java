@@ -136,4 +136,14 @@ public class UserService {
             throw new AppException("User not found", HttpStatus.NOT_FOUND);
         }
     }
+
+    public Integer deleteUser(Long id) {
+        try{
+            userRepository.deleteById(id);
+            return 1;
+        } catch (Exception e) {
+            System.out.println("Error :: " + e.getMessage());
+            return -1;
+        }
+    }
 }
