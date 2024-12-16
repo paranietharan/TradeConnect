@@ -1,10 +1,7 @@
 package com.tradeconnect.tradeconnectapi.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -12,6 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "orders")
+@Builder
 public class Order {
     @Id
     private Long id;
@@ -21,7 +19,7 @@ public class Order {
     private int quantity;
     private boolean isProductDelivered;
     @Enumerated(EnumType.STRING)
-    private OrderStatus orderStatus;
+    private OrderStatus orderStatus = OrderStatus.PROCESSING;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
