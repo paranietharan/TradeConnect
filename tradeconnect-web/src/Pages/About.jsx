@@ -2,6 +2,7 @@ import styles from './styles/About.module.css'
 import TopNavigationBar from '../Components/utils/TopNavigationBar'
 import ShoppingGirlsImg from '../assets/images/shopping_girls.jpg'
 import DetailsBar from '../Components/About/DetailsBar';
+import PageFooter from '../Components/utils/PageFooter';
 
 function AboutPage() {
     return (
@@ -32,6 +33,12 @@ function AboutPage() {
                 <div className={styles.statistics}>
                     <DetailsBar />
                 </div>
+
+                <div className={styles.highOfficials}></div>
+                <div className={styles.feature}></div>
+            </div>
+            <div className={styles.footer}>
+                <PageFooter />
             </div>
         </div>
     )
