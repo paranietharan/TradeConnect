@@ -1,6 +1,7 @@
 import styles from './styles/About.module.css'
 import TopNavigationBar from '../Components/utils/TopNavigationBar'
 import ShoppingGirlsImg from '../assets/images/shopping_girls.jpg'
+import DetailsBar from '../Components/About/DetailsBar';
 
 function AboutPage() {
     return (
@@ -28,7 +29,9 @@ function AboutPage() {
                     </div>
                 </div>
 
-                <div className={styles.statistics}></div>
+                <div className={styles.statistics}>
+                    <DetailsBar />
+                </div>
             </div>
         </div>
     )

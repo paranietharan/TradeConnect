@@ -1,0 +1,9 @@
+.DetailsBarContainer{
+    display: flex;
+    padding: 20px;
+}
+
+.box{
+    min-height: 20vh;
+    max-height: 20vh;
+}
