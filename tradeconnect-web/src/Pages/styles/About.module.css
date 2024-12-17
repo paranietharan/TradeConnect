@@ -31,3 +31,9 @@
     object-fit: cover;
     display: block;
 }
+
+.statistics{
+    margin-bottom: 50px;
+    margin-left: calc((100vw - 50%) / 2);
+    width: 50vw;
+}
