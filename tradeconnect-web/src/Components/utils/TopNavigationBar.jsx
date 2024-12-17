@@ -25,7 +25,7 @@ function TopNavigationBar() {
 
             <div className={styles.navLinksContainer}>
                 <Link to='/'>Home</Link>
-                <Link to='/'>Products</Link>
+                <Link to='/'>Contact</Link>
                 <Link to='/'>About</Link>
                 <Link to='/'>Login</Link>
             </div>
