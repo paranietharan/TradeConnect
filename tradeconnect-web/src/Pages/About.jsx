@@ -1,5 +1,6 @@
 import styles from './styles/About.module.css'
 import TopNavigationBar from '../Components/utils/TopNavigationBar'
+import ShoppingGirlsImg from '../assets/images/shopping_girls.jpg'
 
 function AboutPage() {
     return (
@@ -19,8 +20,15 @@ function AboutPage() {
                         <p className={styles.storyBody}>Exclusive has more than 1 Million products to offer,
                             growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.</p>
                     </div>
-                    <div className={styles.image}></div>
+                    <div className={styles.image}>
+                        <img
+                            src={ShoppingGirlsImg}
+                            alt="Shopping girls"
+                        />
+                    </div>
                 </div>
+
+                <div className={styles.statistics}></div>
             </div>
         </div>
     )
