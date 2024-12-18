@@ -3,6 +3,7 @@ import TopNavigationBar from '../Components/utils/TopNavigationBar'
 import ShoppingGirlsImg from '../assets/images/shopping_girls.jpg'
 import DetailsBar from '../Components/About/DetailsBar';
 import PageFooter from '../Components/utils/PageFooter';
+import EmployeeDetailsBar from '../Components/About/EmployeeDetailsBar';
 
 function AboutPage() {
     return (
@@ -34,7 +35,9 @@ function AboutPage() {
                     <DetailsBar />
                 </div>
 
-                <div className={styles.highOfficials}></div>
+                <div className={styles.highOfficials}>
+                    <EmployeeDetailsBar />
+                </div>
                 <div className={styles.feature}></div>
             </div>
             <div className={styles.footer}>
