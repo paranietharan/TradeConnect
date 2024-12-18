@@ -43,6 +43,7 @@ public class OrderMapper {
 
     public OrderResponse toOrderResponse(Order order) {
         return new OrderResponse(
+                order.getId(),
                 order.getOrderType().name(),
                 order.getTotalAmount(),
                 order.getQuantity(),
