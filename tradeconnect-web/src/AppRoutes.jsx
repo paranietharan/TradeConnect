@@ -11,8 +11,8 @@ function AppRoutes() {
       <Routes>
         <Route path="/log-in" element={<LoginPage />} />
         <Route path='/sign-up' element={<SignUpPage />} />
-        <Route path='/home' element={<HomePage />} />
-        <Route path='/' element={<AboutPage />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
     </Router>
   );

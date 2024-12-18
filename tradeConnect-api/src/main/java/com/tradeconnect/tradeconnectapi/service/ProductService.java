@@ -76,4 +76,22 @@ public class ProductService {
     public boolean isProductExists(Long aLong) {
         return productRepository.existsById(aLong);
     }
+
+    // check the product has stock
+    public boolean hasStock(Long productId, int quantity) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        return product.getAvilableQuantity() >= quantity;
+    }
+    // method to update the stock count
+    public void updateStock(Long productId, int quantity) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        int newQuantity = product.getAvilableQuantity() - quantity;
+        if (newQuantity < 0) {
+            throw new RuntimeException("Insufficient stock");
+        }
+        product.setAvilableQuantity(newQuantity);
+        productRepository.save(product);
+    }
 }

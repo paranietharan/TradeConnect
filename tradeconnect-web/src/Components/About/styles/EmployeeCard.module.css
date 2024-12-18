@@ -1,0 +1,60 @@
+.EmployeeCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.EmployeeCardContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+}
+
+.position {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.icon:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+}
