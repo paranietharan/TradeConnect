@@ -1,0 +1,39 @@
+.WishListPage{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.body{
+    margin: 20px 10px 10px 20px;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.wishListHeading {
+    font-size: 25px;
+    margin: 0;
+}
+
+.CartButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.CartButton:hover {
+    background-color: #0056b3;
+}
+
+.recomondationsHeading {
+    font-size: 25px;
+    margin: 0;
+}
