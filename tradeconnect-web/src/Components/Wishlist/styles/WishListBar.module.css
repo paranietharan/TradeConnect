@@ -1,0 +1,23 @@
+.WishListBar {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    scrollbar-width: none;
+}
+
+.WishListBar::-webkit-scrollbar {
+    display: none;
+}
+
+.product {
+    flex: 0 0 calc(20% - 20px);
+    max-width: 300px;
+    scroll-snap-align: center;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}

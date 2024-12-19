@@ -4,6 +4,7 @@ import LoginPage from './Pages/LoginPage';
 import SignUpPage from './Pages/SignUpPage';
 import HomePage from './Pages/HomePage';
 import AboutPage from './Pages/About';
+import WishListPage from './Pages/WishList';
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<AboutPage />} />
+        <Route path='/wishlist' element={<WishListPage />} />
       </Routes>
     </Router>
   );
